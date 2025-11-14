@@ -1,5 +1,5 @@
-#ifndef PLOTTINGGRAPHS_PY_SORTTESTER_H
-#define PLOTTINGGRAPHS_PY_SORTTESTER_H
+#ifndef A2_SORTTESTER_H
+#define A2_SORTTESTER_H
 
 #include <cstdint>
 #include <vector>
@@ -86,4 +86,4 @@ private:
     }
 };
 
-#endif //PLOTTINGGRAPHS_PY_SORTTESTER_H
+#endif //A2_SORTTESTER_H
