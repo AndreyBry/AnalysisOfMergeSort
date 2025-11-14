@@ -5,7 +5,7 @@ void insertionSort(std::vector<int>& array, size_t left, size_t right) {
     for (size_t i = left + 1; i < right + 1; ++i) {
         int key = array[i];
         size_t j = i;
-        for (; j >= 1 && key < array[j - 1]; --j) {
+        for (; j >= left + 1 && key < array[j - 1]; --j) {
             array[j] = array[j - 1];
         }
         array[j] = key;
@@ -41,8 +41,8 @@ void mergeSort(std::vector<int>& array, size_t left, size_t right, size_t thresh
 void mergeInsertionSort(std::vector<int>& array, size_t left, size_t right, size_t threshold=1) {
     if (right - left + 1 > threshold) {
         size_t mid = (left + right) / 2;
-        mergeSort(array, left, mid);
-        mergeSort(array, mid + 1, right);
+        mergeInsertionSort(array, left, mid, threshold);
+        mergeInsertionSort(array, mid + 1, right, threshold);
         merge(array, left, mid, right);
     } else {
         insertionSort(array, left, right);
